@@ -1,11 +1,13 @@
-import React from './node_modules/react';
+import React from 'react';
 import Aux from '../../hoc/Auxi';
 
 const layout = (props) => {
+  return(
   <Aux>
     <div>Toolbar, sidedrawer, backdrawer</div>
     <main>{props.childrens}</main>
-  </Aux>;
+  </Aux>
+    )
 };
 
 export default layout;
