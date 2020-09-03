@@ -1,11 +1,19 @@
-import React from './node_modules/react';
+import React from 'react';
 import Aux from '../../hoc/Auxi';
+import LoginFormUser from '../../containers/LoginUser/LoginUser';
+import AdminLogin from '../../containers/AdminLogin/AdminLogin';
+import UserRegistration from '../../containers/UserRegistration/UserRegistration';
+import Footer from '../Footer/Footer';
 
-const layout = (props) => {
+const layout = (props) => (
   <Aux>
-    <div>Toolbar, sidedrawer, backdrawer</div>
-    <main>{props.childrens}</main>
-  </Aux>;
-};
+    <main style={{ marginBottom: '30px' }}>
+      {/* <LoginFormUser />
+      <AdminLogin /> */}
+      <UserRegistration />
+    </main>
+    <Footer></Footer>
+  </Aux>
+);
 
 export default layout;
