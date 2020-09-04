@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
+import { Link } from 'react-router-dom';
 
 class UserRegistration extends Component {
   render() {
@@ -65,6 +66,17 @@ class UserRegistration extends Component {
                   >
                     Register
                   </button>
+                  <div className='text-center mt-4'>
+                    <p
+                      style={{
+                        fontSize: '16px',
+                        textTransform: 'uppercase',
+                        fontWeight: '500'
+                      }}
+                    >
+                      Already have an account ? <Link to='/'>Sign In</Link>
+                    </p>
+                  </div>
                 </form>
               </div>
             </div>

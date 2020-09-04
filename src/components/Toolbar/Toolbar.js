@@ -1,13 +1,14 @@
 import React from 'react';
-import { Navbar, Nav, Image } from 'react-bootstrap';
 const toolbar = (props) => (
-  <Navbar bg='primary' variant='dark'>
-    <Navbar.Brand>
-      <Image src='../../assets/Images/Weltec.png' alt='logo' />
-    </Navbar.Brand>
-    <Nav>
-      <Nav.Link href='#logout'>LogOut</Nav.Link>
-    </Nav>
-  </Navbar>
+  <nav className='navbar fixed-top' style={{ backgroundColor: '#1F9ED9' }}>
+    <a className='navbar-brand' href='login'>
+      <img
+        src={require('../../assets/Images/weltec-logo.svg')}
+        alt='WelTec logo'
+        width='150'
+      />
+    </a>
+    <span className='navbar-text text-white'>Log out</span>
+  </nav>
 );
 export default toolbar;

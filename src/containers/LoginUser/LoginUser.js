@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
-
+import { Link } from 'react-router-dom';
 class loginUser extends Component {
   render() {
     return (
@@ -58,7 +58,7 @@ class loginUser extends Component {
                   fontWeight: '500'
                 }}
               >
-                Not register yet ? <a href='register'>Register Now</a>
+                Not register yet ? <Link to='/registration'>Register Now</Link>
               </p>
             </div>
             <br />
