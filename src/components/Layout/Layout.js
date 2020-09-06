@@ -3,6 +3,7 @@ import Aux from '../../hoc/Auxi';
 import LoginFormUser from '../../containers/LoginUser/LoginUser';
 import AdminLogin from '../../containers/AdminLogin/AdminLogin';
 import SideNavbar from '../SideNavbar/SideNavbar';
+import AdminDashboard from '../../containers/AdminDashboard/AdminDashboard';
 import Toolbar from '../Toolbar/Toolbar';
 import UserRegistration from '../../containers/UserRegistration/UserRegistration';
 import Footer from '../Footer/Footer';
@@ -26,13 +27,13 @@ const layout = (props) => (
             <div>
               <Toolbar />
               <div style={{ marginTop: '100px' }}></div>
-              <div className='container'>
+              <div className='container-fluid'>
                 <div className='row'>
-                  <div className='col-md-4'>
+                  <div className='col-md-2'>
                     <SideNavbar />
                   </div>
                   <div className='col-md-8'>
-                    <h1>this is main section</h1>
+                    <AdminDashboard />
                   </div>
                 </div>
               </div>

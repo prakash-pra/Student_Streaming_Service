@@ -6,7 +6,7 @@ class UserRegistration extends Component {
   render() {
     return (
       <Aux>
-        <div className='container' style={{ marginTop: '90px' }}>
+        <div className='container' style={{ marginTop: '65px' }}>
           <div className='row'>
             <div className='col-md-8 offset-md-2'>
               <div className='card' style={{ border: 'none' }}>
