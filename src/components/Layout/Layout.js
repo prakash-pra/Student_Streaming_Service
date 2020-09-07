@@ -7,7 +7,7 @@ import AdminDashboard from '../../containers/AdminDashboard/AdminDashboard';
 import Toolbar from '../Toolbar/Toolbar';
 import UserRegistration from '../../containers/UserRegistration/UserRegistration';
 import Footer from '../Footer/Footer';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const layout = (props) => (
   <Aux>
