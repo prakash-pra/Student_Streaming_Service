@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class UserDashboard extends Component {
   render() {
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid' style={{ marginBottom: '25px' }}>
         <div className='row'>
           <div className='col' style={{ marginTop: '25px' }}>
             <table className='table table-bordered'>
