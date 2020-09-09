@@ -11,7 +11,8 @@ class loginUser extends Component {
             width: '33.33%',
             marginLeft: '33%',
             border: 'none',
-            marginTop: '100px'
+            position: 'absolute',
+            top: 100
           }}
         >
           <div
