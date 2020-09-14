@@ -8,10 +8,10 @@ const sidenavbar = (props) => (
       <div class='sidebar-sticky'>
         <ul class='nav flex-column'>
           <li class='nav-item'>
-            <a class='nav-link active' href='Admin_dashboard.html'>
+            <Link class='nav-link active' to='Admin_dashboard'>
               <span data-feather='home'></span>Home
               <span class='sr-only'>(current)</span>
-            </a>
+            </Link>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='Admin_convert_apid.html'>
@@ -46,9 +46,9 @@ const sidenavbar = (props) => (
         </h6>
         <ul class='nav flex-column mb-2'>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_LoadSpreadsheet.html'>
+            <Link class='nav-link' to='/spreadsheet'>
               <span data-feather='upload'></span>Load/Wipe Spreadsheet
-            </a>
+            </Link>
           </li>
         </ul>
 
