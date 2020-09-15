@@ -7,6 +7,7 @@ import UserDashboard from '../../containers/UserDashboard/UserDashboard';
 import AdminDashboard from '../../containers/AdminDashboard/AdminDashboard';
 import Streams from '../../containers/Streams/Streams';
 import RemoveStudent from '../../containers/RemoveStudent/RemoveStudent';
+import Register from '../../containers/Register/Register';
 import ApToIpConversion from '../../containers/APtoIPConversion/ApToIpConversion';
 import Toolbar from '../Toolbar/Toolbar';
 import SpreadSheet from '../../containers/SpreadSheet/SpreadSheet';
@@ -88,6 +89,22 @@ class layout extends Component {
                       </div>
                       <div className='col-md-8'>
                         <Streams />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/Register'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <Register />
                       </div>
                     </div>
                   </div>
