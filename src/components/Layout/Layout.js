@@ -5,6 +5,9 @@ import AdminLogin from '../../containers/AdminLogin/AdminLogin';
 import SideNavbar from '../SideNavbar/SideNavbar';
 import UserDashboard from '../../containers/UserDashboard/UserDashboard';
 import AdminDashboard from '../../containers/AdminDashboard/AdminDashboard';
+import Streams from '../../containers/Streams/Streams';
+import RemoveStudent from '../../containers/RemoveStudent/RemoveStudent';
+import ApToIpConversion from '../../containers/APtoIPConversion/ApToIpConversion';
 import Toolbar from '../Toolbar/Toolbar';
 import SpreadSheet from '../../containers/SpreadSheet/SpreadSheet';
 import UserRegistration from '../../containers/UserRegistration/UserRegistration';
@@ -37,6 +40,54 @@ class layout extends Component {
                       </div>
                       <div className='col-md-8'>
                         <AdminDashboard />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/ap_conversion'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <ApToIpConversion />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/remove_student'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <RemoveStudent />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/streams'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <Streams />
                       </div>
                     </div>
                   </div>

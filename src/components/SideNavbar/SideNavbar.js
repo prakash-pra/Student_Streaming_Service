@@ -14,14 +14,14 @@ const sidenavbar = (props) => (
             </Link>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_convert_apid.html'>
+            <Link class='nav-link' to='/ap_conversion'>
               <span data-feather='refresh-ccw'></span>Convert AP to ID
-            </a>
+            </Link>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_remove_student.html'>
+            <Link class='nav-link' to='remove_student'>
               <span data-feather='user-minus'></span>Removal of Student
-            </a>
+            </Link>
           </li>
         </ul>
         <h6 class='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted'>
@@ -29,9 +29,9 @@ const sidenavbar = (props) => (
         </h6>
         <ul class='nav flex-column mb-2'>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_extract_streamlist.html'>
+            <Link class='nav-link' to='Streams'>
               <span data-feather='list'></span>Stream List
-            </a>
+            </Link>
           </li>
 
           <li class='nav-item'>
