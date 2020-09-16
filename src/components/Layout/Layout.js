@@ -8,6 +8,8 @@ import AdminDashboard from '../../containers/AdminDashboard/AdminDashboard';
 import Streams from '../../containers/Streams/Streams';
 import RemoveStudent from '../../containers/RemoveStudent/RemoveStudent';
 import Register from '../../containers/Register/Register';
+import Report from '../../containers/ReportSummary/ReportSummary';
+import StudentWarning from '../../containers/StudentWarning/StudentWarning';
 import ApToIpConversion from '../../containers/APtoIPConversion/ApToIpConversion';
 import Toolbar from '../Toolbar/Toolbar';
 import SpreadSheet from '../../containers/SpreadSheet/SpreadSheet';
@@ -105,6 +107,38 @@ class layout extends Component {
                       </div>
                       <div className='col-md-8'>
                         <Register />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/Report'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <Report />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Route>
+              <Route exact path='/Warnings'>
+                <div>
+                  <Toolbar />
+                  <div style={{ marginTop: '100px' }}></div>
+                  <div className='container-fluid'>
+                    <div className='row'>
+                      <div className='col-md-2'>
+                        <SideNavbar />
+                      </div>
+                      <div className='col-md-8'>
+                        <StudentWarning />
                       </div>
                     </div>
                   </div>

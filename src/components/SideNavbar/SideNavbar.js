@@ -57,14 +57,14 @@ const sidenavbar = (props) => (
         </h6>
         <ul class='nav flex-column mb-2'>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_summary_report.html'>
+            <Link class='nav-link' to='/Report'>
               <span data-feather='file-text'></span>Lab and Class Capacity
-            </a>
+            </Link>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='Admin_student_warnings.html'>
+            <Link class='nav-link' to='Warnings'>
               <span data-feather='file-text'></span>Students with Warnings
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
