@@ -10,10 +10,9 @@ class AdminDashboard extends Component {
       <Aux>
         <div>
           <Toolbar />
-          <div style={{ marginTop: '100px' }}></div>
-          <div className='container-fluid'>
+          <div className='container-fluid' style={{ marginTop: '60px' }}>
             <div className='row'>
-              <div className='col' style={{ padding: '0px' }}>
+              <div className='col-md-3'>
                 <SideNavbar />
               </div>
               <div className='col-md-9'>
@@ -22,19 +21,6 @@ class AdminDashboard extends Component {
             </div>
           </div>
         </div>
-        {/* <div className='container'>
-        <div className='row'>
-          <div className='col-md-4'>
-            <h1>section one</h1>
-          </div>
-          <div className='col-md-4'>
-            <h1>section one</h1>
-          </div>
-          <div className='col-md-4'>
-            <h1>section one</h1>
-          </div>
-        </div>
-    </div>*/}
       </Aux>
     );
   }

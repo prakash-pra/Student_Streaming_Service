@@ -55,7 +55,7 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
                       <div className='col-md-8'>
@@ -71,7 +71,7 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
                       <div className='col-md-8'>
@@ -87,7 +87,7 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
                       <div className='col-md-8'>
@@ -103,7 +103,7 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
                       <div className='col-md-8'>
@@ -119,7 +119,7 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
                       <div className='col-md-8'>
@@ -135,10 +135,10 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
-                      <div className='col-md-8'>
+                      <div className='col-md-9'>
                         <StudentWarning />
                       </div>
                     </div>
@@ -151,10 +151,10 @@ class layout extends Component {
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
                     <div className='row'>
-                      <div className='col-md-2'>
+                      <div className='col-md-3'>
                         <SideNavbar />
                       </div>
-                      <div className='col-md-8'>
+                      <div className='col-md-9'>
                         <SpreadSheet />
                       </div>
                     </div>

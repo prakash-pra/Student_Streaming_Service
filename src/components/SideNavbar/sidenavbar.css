@@ -3,6 +3,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
+  cursor: default;
 }
 .sidebarlink {
   font-size: 15px;
