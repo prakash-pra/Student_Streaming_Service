@@ -1,71 +1,107 @@
 import React from 'react';
 import Aux from '../../hoc/Auxi';
 import { Link } from 'react-router-dom';
+import './sidenavbar.css';
+import {
+  Home,
+  RefreshCcw,
+  FileText,
+  Upload,
+  List,
+  UserMinus
+} from 'react-feather';
+
+const navigation = [
+  {
+    url: '/Admin_dashboard',
+    name: 'Home',
+    label: 'Home',
+    icon: <Home />,
+    style: 'mainsidebarheading'
+  },
+  {
+    url: '/ap_conversion',
+    name: 'Convert AP to ID',
+    label: 'Convert AP to ID',
+    icon: <RefreshCcw color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    url: '/remove_student',
+    name: 'Removal of Student',
+    label: 'Removal of Student',
+    icon: <UserMinus color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    name: 'Extraction and Report',
+    label: 'Extraction and Report',
+    style: 'mainsidebarheading'
+  },
+  {
+    url: '/Streams',
+    name: 'Stream List',
+    label: 'Stream List',
+    icon: <List color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    url: '/Register',
+    name: 'Register',
+    label: 'Register',
+    icon: <FileText color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    name: 'Spreadsheet',
+    label: 'Spreadsheet',
+    style: 'mainsidebarheading'
+  },
+  {
+    url: '/spreadsheet',
+    name: 'Load/Wipe Spreadsheet',
+    label: 'Load/Wipe Spreadsheet',
+    icon: <Upload color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    name: 'Reports',
+    label: 'Reports',
+    style: 'mainsidebarheading'
+  },
+  {
+    url: '/Report',
+    name: 'Lab and Class Capacity',
+    label: 'Lab and Class Capacity',
+    icon: <FileText color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  },
+  {
+    url: '/Warnings',
+    name: 'Students with Warnings',
+    label: 'Students with Warnings',
+    icon: <FileText color='#BEBEBE' size={20} />,
+    style: 'sidebarlink'
+  }
+];
 
 const sidenavbar = (props) => (
   <Aux>
-    <nav class='d-none d-md-block bg-light'>
-      <div class='sidebar-sticky'>
-        <ul class='nav flex-column'>
-          <li class='nav-item'>
-            <Link class='nav-link active' to='Admin_dashboard'>
-              <span data-feather='home'></span>Home
-              <span class='sr-only'>(current)</span>
-            </Link>
-          </li>
-          <li class='nav-item'>
-            <Link class='nav-link' to='/ap_conversion'>
-              <span data-feather='refresh-ccw'></span>Convert AP to ID
-            </Link>
-          </li>
-          <li class='nav-item'>
-            <Link class='nav-link' to='remove_student'>
-              <span data-feather='user-minus'></span>Removal of Student
-            </Link>
-          </li>
-        </ul>
-        <h6 class='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted'>
-          <span class='textWeltecColor'>Extraction and Report</span>
-        </h6>
-        <ul class='nav flex-column mb-2'>
-          <li class='nav-item'>
-            <Link class='nav-link' to='Streams'>
-              <span data-feather='list'></span>Stream List
-            </Link>
-          </li>
-
-          <li class='nav-item'>
-            <Link class='nav-link' to='/Register'>
-              <span data-feather='file-text'></span>Register
-            </Link>
-          </li>
-        </ul>
-
-        <h6 class='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted'>
-          <span class='textWeltecColor'>Spreadsheet</span>
-        </h6>
-        <ul class='nav flex-column mb-2'>
-          <li class='nav-item'>
-            <Link class='nav-link' to='/spreadsheet'>
-              <span data-feather='upload'></span>Load/Wipe Spreadsheet
-            </Link>
-          </li>
-        </ul>
-
-        <h6 class='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted'>
-          <span class='textWeltecColor'>Reports</span>
-        </h6>
-        <ul class='nav flex-column mb-2'>
-          <li class='nav-item'>
-            <Link class='nav-link' to='/Report'>
-              <span data-feather='file-text'></span>Lab and Class Capacity
-            </Link>
-          </li>
-          <li class='nav-item'>
-            <Link class='nav-link' to='Warnings'>
-              <span data-feather='file-text'></span>Students with Warnings
-            </Link>
-          </li>
+    <nav className='bg-light'>
+      <div className='sidebar-sticky'>
+        <ul className='nav flex-column'>
+          {navigation.map((value, index) => {
+            return (
+              <li className='nav-item' key={index}>
+                <Link className='nav-link' to={navigation[index].url}>
+                  {navigation[index].icon}
+                  <span className={navigation[index].style}>
+                    {navigation[index].label}{' '}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

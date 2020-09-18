@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Toolbar.css';
 const toolbar = (props) => (
   <nav className={'navbar fixed-top mainNavbar'}>
-    <Link className='navbar-brand' pathname='/dashboad'>
+    <Link className='navbar-brand' to='/dashboad'>
       <img
         src={require('../../assets/Images/weltec-logo.svg')}
         alt='WelTec logo'

@@ -1,0 +1,12 @@
+.mainsidebarheading {
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+.sidebarlink {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  padding: 10px;
+}

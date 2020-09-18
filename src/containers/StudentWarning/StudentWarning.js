@@ -17,7 +17,7 @@ class StudentWarning extends Component {
             />
             <div class='input-group-append'>
               <button
-                class='btn weltecColor text-white'
+                class='btn btn-primary'
                 type='button'
                 id='searchStudWarning'
               >

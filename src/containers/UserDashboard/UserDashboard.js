@@ -79,6 +79,8 @@ class UserDashboard extends Component {
                       <li>
                         <b>Manish Singh</b>
                       </li>
+                      <li>Weltec</li>
+                      <li>IA7307</li>
                       <li>Credit : 15</li>
                     </ul>
                   </td>
@@ -86,15 +88,7 @@ class UserDashboard extends Component {
                   <td></td>
                   <td>
                     <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Credit : </b>15
-                      </li>
-                      <li>
-                        <b>Time : </b>11am - 1pm
-                      </li>
-                      <li>
-                        <b>Lecture : </b>B108
-                      </li>
+                      <li>(11am - 1pm) - B108 - Lecture - IA7307</li>
                       <li>
                         <label
                           className='form-check-label'
@@ -113,15 +107,7 @@ class UserDashboard extends Component {
                   </td>
                   <td>
                     <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Credit : </b>15
-                      </li>
-                      <li>
-                        <b>Time : </b>10am - 12pm
-                      </li>
-                      <li>
-                        <b>Lab : </b>B207
-                      </li>
+                      <li>(10am - 12pm) - B207 - Lab - IA7307</li>
                       <li>
                         <label
                           className='form-check-label'
@@ -154,12 +140,7 @@ class UserDashboard extends Component {
                   <td></td>
                   <td>
                     <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Time : </b>1pm - 3pm
-                      </li>
-                      <li>
-                        <b>Lab/Lecture : </b>C303
-                      </li>
+                      <li>(1pm - 3pm) - C303 - Lab - IT7502</li>
                       <li>
                         <label
                           className='form-check-label'

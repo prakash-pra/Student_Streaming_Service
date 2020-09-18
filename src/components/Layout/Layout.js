@@ -33,7 +33,8 @@ class layout extends Component {
                 <UserRegistration />
               </Route>
               <Route exact path='/admin_dashboard'>
-                <div>
+                <AdminDashboard />
+                {/* <div>
                   <Toolbar />
                   <div style={{ marginTop: '100px' }}></div>
                   <div className='container-fluid'>
@@ -46,7 +47,7 @@ class layout extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </Route>
               <Route exact path='/ap_conversion'>
                 <div>
