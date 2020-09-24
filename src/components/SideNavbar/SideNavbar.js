@@ -13,10 +13,10 @@ import {
 
 const navigation = [
   {
-    url: '/Admin_dashboard',
     name: 'Home',
     label: 'Home',
     icon: <Home />,
+    disable: true,
     style: 'mainsidebarheading'
   },
   {
@@ -36,7 +36,8 @@ const navigation = [
   {
     name: 'Extraction and Report',
     label: 'Extraction and Report',
-    style: 'mainsidebarheading'
+    style: 'mainsidebarheading',
+    disable: true
   },
   {
     url: '/Streams',
@@ -55,7 +56,8 @@ const navigation = [
   {
     name: 'Spreadsheet',
     label: 'Spreadsheet',
-    style: 'mainsidebarheading'
+    style: 'mainsidebarheading',
+    disable: true
   },
   {
     url: '/spreadsheet',
@@ -67,7 +69,8 @@ const navigation = [
   {
     name: 'Reports',
     label: 'Reports',
-    style: 'mainsidebarheading'
+    style: 'mainsidebarheading',
+    disable: true
   },
   {
     url: '/Report',
@@ -85,26 +88,34 @@ const navigation = [
   }
 ];
 
-const sidenavbar = (props) => (
-  <Aux>
-    <nav className='bg-light'>
-      <div className='sidebar-sticky'>
-        <ul className='nav flex-column'>
-          {navigation.map((value, index) => {
-            return (
-              <li className='nav-item' key={index}>
-                <Link className='nav-link' to={navigation[index].url}>
-                  {navigation[index].icon}
-                  <span className={navigation[index].style}>
-                    {navigation[index].label}{' '}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </nav>
-  </Aux>
-);
+const sidenavbar = (props) => {
+  return (
+    <Aux>
+      <nav className='bg-light'>
+        <div className='sidebar-sticky'>
+          <ul className='nav flex-column'>
+            {navigation.map((value, index) => {
+              return (
+                <li className='nav-item' key={index}>
+                  <Link
+                    className='nav-link'
+                    to={`${props.url}${navigation[index].url}`}
+                    onClick={props.getUrl(
+                      `${props.url}${navigation[index].url}`
+                    )}
+                  >
+                    {navigation[index].icon}
+                    <span className={navigation[index].style}>
+                      {navigation[index].label}{' '}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </nav>
+    </Aux>
+  );
+};
 export default sidenavbar;

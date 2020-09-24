@@ -4,20 +4,20 @@ class StudentWarning extends Component {
   render() {
     return (
       <Aux>
-        <div class='col py-3 px-lg-5 offset-md-1'>
+        <div className='col py-3 px-lg-5 offset-md-1'>
           <h3>Students with Warnings</h3>
           <hr></hr>
-          <div class='input-group mb-3'>
+          <div className='input-group mb-3'>
             <input
               type='text'
-              class='form-control'
+              className='form-control'
               placeholder='Search table'
               aria-label='Search table'
               aria-describedby='searchStudWarning'
             />
-            <div class='input-group-append'>
+            <div className='input-group-append'>
               <button
-                class='btn btn-primary'
+                className='btn btn-primary'
                 type='button'
                 id='searchStudWarning'
               >
@@ -25,8 +25,8 @@ class StudentWarning extends Component {
               </button>
             </div>
           </div>
-          <table class='table table-bordered table-hover'>
-            <thead class='thead-dark'>
+          <table className='table table-bordered table-hover'>
+            <thead className='thead-dark'>
               <tr>
                 <th scope='col'>Student Name</th>
                 <th scope='col'>ID Number</th>
@@ -57,7 +57,7 @@ class StudentWarning extends Component {
           </table>
           <button
             type='button'
-            class='btn weltecColor btn-lg btn-block text-white'
+            className='btn weltecColor btn-lg btn-block text-white'
             data-toggle='modal'
             data-target='#modalExtractStudWarning'
           >
@@ -66,41 +66,41 @@ class StudentWarning extends Component {
         </div>
 
         <div
-          class='modal fade'
+          className='modal fade'
           id='modalExtractStudWarning'
-          tabindex='-1'
+          tabIndex='-1'
           role='dialog'
           aria-labelledby='modalExtractStudWarningTitle'
           aria-hidden='true'
         >
-          <div class='modal-dialog modal-dialog-centered' role='document'>
-            <div class='modal-content'>
-              <div class='modal-header'>
-                <h5 class='modal-title' id='modalExtractStudWarningTitle'>
+          <div className='modal-dialog modal-dialog-centered' role='document'>
+            <div className='modal-content'>
+              <div className='modal-header'>
+                <h5 className='modal-title' id='modalExtractStudWarningTitle'>
                   Choose extraction type.
                 </h5>
                 <button
                   type='button'
-                  class='close'
+                  className='close'
                   data-dismiss='modal'
                   aria-label='Close'
                 >
                   <span aria-hidden='true'>&times;</span>
                 </button>
               </div>
-              <div class='modal-body'>
+              <div className='modal-body'>
                 <h6>Email:</h6>
-                <div class='input-group mb-3'>
+                <div className='input-group mb-3'>
                   <input
                     type='text'
-                    class='form-control'
+                    className='form-control'
                     placeholder='Enter email'
                     aria-label='Enter email'
                     aria-describedby='btnSendEmail'
                   />
-                  <div class='input-group-append'>
+                  <div className='input-group-append'>
                     <button
-                      class='btn weltecColor text-white'
+                      className='btn weltecColor text-white'
                       type='button'
                       id='btnSendEmail'
                     >
@@ -114,17 +114,17 @@ class StudentWarning extends Component {
 
                   <button
                     type='button'
-                    class='btn btn-lg weltecColor text-white'
+                    className='btn btn-lg weltecColor text-white'
                   >
-                    <span class='text-white' data-feather='printer'></span>
+                    <span className='text-white' data-feather='printer'></span>
                     &nbsp;Print
                   </button>
                 </center>
               </div>
-              <div class='modal-footer'>
+              <div className='modal-footer'>
                 <button
                   type='button'
-                  class='btn btn-secondary'
+                  className='btn btn-secondary'
                   data-dismiss='modal'
                 >
                   Cancel
