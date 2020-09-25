@@ -73,7 +73,7 @@ const navigation = [
     disable: true
   },
   {
-    url: '/Report',
+    url: '/admin_dashboard/report',
     name: 'Lab and Class Capacity',
     label: 'Lab and Class Capacity',
     icon: <FileText color='#BEBEBE' size={20} />,
@@ -99,10 +99,11 @@ const sidenavbar = (props) => {
                 <li className='nav-item' key={index}>
                   <Link
                     className='nav-link'
-                    to={`${props.url}${navigation[index].url}`}
-                    onClick={props.getUrl(
-                      `${props.url}${navigation[index].url}`
-                    )}
+//                     to={`${props.url}${navigation[index].url}`}
+//                     onClick={props.getUrl(
+//                       `${props.url}${navigation[index].url}`
+//                     )}
+                    to={`${navigation[index].url}`}
                   >
                     {navigation[index].icon}
                     <span className={navigation[index].style}>
