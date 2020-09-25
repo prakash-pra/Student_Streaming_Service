@@ -3,6 +3,8 @@ import Aux from '../../hoc/Auxi';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import SideNavbar from '../../components/SideNavbar/SideNavbar';
 import Home from '../../containers/AdminHome/AdminHome';
+import APtoIPConversion from '../APtoIPConversion/ApToIpConversion';
+
 
 class AdminDashboard extends Component {
   constructor(props) {
@@ -15,6 +17,15 @@ class AdminDashboard extends Component {
   handleUrl({ newPath }) {
     this.setState({ mypath: newPath });
     // this.state.sidebarurl = newPath;
+  }
+   renderSwitch=()=>{
+    let param=this.props.match.params.name;
+    switch(param){
+        case "report":
+        return   <APtoIPConversion/>
+        default:
+          return <Home/>; 
+    }
   }
   render() {
     return (
@@ -30,7 +41,8 @@ class AdminDashboard extends Component {
                 />
               </div>
               <div className='col-md-9'>
-                <Home />
+                {this.renderSwitch()}
+//                 <Home />
               </div>
             </div>
           </div>
