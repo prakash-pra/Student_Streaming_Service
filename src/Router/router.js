@@ -14,7 +14,7 @@ class router extends Component {
         <Route exact path='/' component={LoginFormUser} />
         <Route exact path='/registration' component={UserRegistration} />
         <Route exact path='/administration' component={AdminLogin} />
-//         <Route exact path='/admin_dashboard' component={AdminDashboard} />
+         {/* <Route exact path='/admin_dashboard' component={AdminDashboard} /> */}
          <Route exact path='/admin_dashboard/:name?' component={AdminDashboard} />
 
 
