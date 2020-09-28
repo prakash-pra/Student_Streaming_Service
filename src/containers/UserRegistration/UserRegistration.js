@@ -1,8 +1,49 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
 import { Link } from 'react-router-dom';
+import Api from '../../constants/axios';
 
 class UserRegistration extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      studentId: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      contact: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
+    Api('/student/createStudent.php', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json;'
+      },
+      body: this.state
+    })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   render() {
     return (
       <Aux>
@@ -23,27 +64,40 @@ class UserRegistration extends Component {
                     width='170'
                   />
                 </div>
-                <form className='form-signin'>
+                <form className='form-signin' onSubmit={this.handleSubmit}>
                   <br />
                   <div className='form-group'>
                     <label htmlFor='ap/id'>IP/AP Number</label>
-                    <input type='text' className='form-control' id='ap/id' />
+                    <input
+                      name='studentId'
+                      type='text'
+                      className='form-control'
+                      value={this.state.studentId}
+                      onChange={this.handleChange}
+                      id='ap/id'
+                    />
                   </div>
 
                   <div className='form-row'>
                     <div className='form-group col-md-6'>
                       <label htmlFor='first-name'>First Name</label>
                       <input
+                        name='firstName'
                         type='text'
                         className='form-control'
+                        value={this.state.firstName}
+                        onChange={this.handleChange}
                         id='first-name'
                       />
                     </div>
                     <div className='form-group col-md-6'>
                       <label htmlFor='last-name'>Last Name</label>
                       <input
+                        name='lastName'
                         type='text'
                         className='form-control'
+                        value={this.state.lastName}
+                        onChange={this.handleChange}
                         id='last-name'
                       />
                     </div>
@@ -51,14 +105,24 @@ class UserRegistration extends Component {
 
                   <div className='form-group'>
                     <label htmlFor='email'>Email</label>
-                    <input type='text' className='form-control' id='email' />
+                    <input
+                      name='email'
+                      type='text'
+                      className='form-control'
+                      value={this.state.email}
+                      onChange={this.handleChange}
+                      id='email'
+                    />
                   </div>
 
                   <div className='form-group'>
                     <label htmlFor='contact-number'>Contact Number</label>
                     <input
+                      name='contact'
                       type='number'
                       className='form-control'
+                      value={this.state.contact}
+                      onChange={this.handleChange}
                       id='contact-number'
                     />
                   </div>

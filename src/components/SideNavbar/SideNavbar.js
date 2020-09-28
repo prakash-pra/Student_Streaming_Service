@@ -20,14 +20,14 @@ const navigation = [
     style: 'mainsidebarheading'
   },
   {
-    url: '/ap_conversion',
+    url: 'ap_conversion',
     name: 'Convert AP to ID',
     label: 'Convert AP to ID',
     icon: <RefreshCcw color='#BEBEBE' size={20} />,
     style: 'sidebarlink'
   },
   {
-    url: '/remove_student',
+    url: 'remove_student',
     name: 'Removal of Student',
     label: 'Removal of Student',
     icon: <UserMinus color='#BEBEBE' size={20} />,
@@ -40,14 +40,14 @@ const navigation = [
     disable: true
   },
   {
-    url: '/Streams',
+    url: 'Streams',
     name: 'Stream List',
     label: 'Stream List',
     icon: <List color='#BEBEBE' size={20} />,
     style: 'sidebarlink'
   },
   {
-    url: '/Register',
+    url: 'Register',
     name: 'Register',
     label: 'Register',
     icon: <FileText color='#BEBEBE' size={20} />,
@@ -60,7 +60,7 @@ const navigation = [
     disable: true
   },
   {
-    url: '/spreadsheet',
+    url: 'spreadsheet',
     name: 'Load/Wipe Spreadsheet',
     label: 'Load/Wipe Spreadsheet',
     icon: <Upload color='#BEBEBE' size={20} />,
@@ -73,14 +73,14 @@ const navigation = [
     disable: true
   },
   {
-    url: '/Report',
+    url: 'Report',
     name: 'Lab and Class Capacity',
     label: 'Lab and Class Capacity',
     icon: <FileText color='#BEBEBE' size={20} />,
     style: 'sidebarlink'
   },
   {
-    url: '/Warnings',
+    url: 'Warnings',
     name: 'Students with Warnings',
     label: 'Students with Warnings',
     icon: <FileText color='#BEBEBE' size={20} />,
@@ -97,14 +97,8 @@ const sidenavbar = (props) => {
             {navigation.map((value, index) => {
               return (
                 <li className='nav-item' key={index}>
-                  <Link
-                    className='nav-link'
-                    to={`${props.url}${navigation[index].url}`}
-                    onClick={props.getUrl(
-                      `${props.url}${navigation[index].url}`
-                    )}
-                  >
-                    {navigation[index].icon}
+                  <Link className='nav-link' to={`${value.url}`}>
+                    {value.icon}
                     <span className={navigation[index].style}>
                       {navigation[index].label}{' '}
                     </span>
