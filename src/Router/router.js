@@ -17,19 +17,6 @@ class router extends Component {
           path='/admin_dashboard/:name?'
           component={AdminDashboard}
         />
-        {/* <Route exact path='/user_dashboard'>
-            <div>
-              <Toolbar />
-              <div style={{ marginTop: '90px' }}></div>
-              <div className='container-fluid'>
-                <div className='row'>
-                  <div className='col-sm-12'>
-                    <UserDashboard />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-        {/* </Route> */}
       </div>
     );
   }
