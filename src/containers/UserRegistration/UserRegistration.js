@@ -37,7 +37,6 @@ class UserRegistration extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      contact: '',
       errors: {
         studentId: '',
         firstName: '',
@@ -210,19 +209,6 @@ class UserRegistration extends Component {
                       <span className='text-danger'>{errors.email}</span>
                     )}
                   </div>
-
-                  <div className='form-group'>
-                    <label htmlFor='contact-number'>Contact Number</label>
-                    <input
-                      name='contact'
-                      type='number'
-                      className='form-control'
-                      value={this.state.contact}
-                      onChange={this.handleChange}
-                      id='contact-number'
-                    />
-                  </div>
-
                   <button
                     className='text-white btn btn-primary btn-lg btn-block'
                     type='submit'
