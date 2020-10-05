@@ -10,7 +10,6 @@ import Spreadsheet from '../SpreadSheet/SpreadSheet';
 import Report from '../ReportSummary/ReportSummary';
 import Warnings from '../StudentWarning/StudentWarning';
 import Home from '../../containers/AdminHome/AdminHome';
-import APtoIPConversion from '../APtoIPConversion/ApToIpConversion';
 
 class AdminDashboard extends Component {
   renderSwitch = () => {
