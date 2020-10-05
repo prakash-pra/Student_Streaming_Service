@@ -2,34 +2,32 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
 import { Link } from 'react-router-dom';
 import Api from '../../constants/axios';
-const validEmailRegex = RegExp(
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-);
+const validEmailRegex = RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
 const validateForm = (errors) => {
   let valid = true;
   Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
   return valid;
 };
 
-const checkBeforeFormSubmit = (errors) => {
-  let isValid = false;
+// const checkBeforeFormSubmit = (errors) => {
+//   let isValid = false;
 
-  console.log(Object.values(errors));
-  if (errors.studentId === '') {
-    errors.studentId = 'Student ID/AP must no be empty!';
-  } else if (errors.firstName === '') {
-    errors.firstName = 'First Name must no be empty!';
-  } else if (errors.lastName === '') {
-    errors.lastName = 'Last Name must no be empty!';
-  } else if (errors.email === '') {
-    errors.email = 'Email must no be empty!';
-  } else if (errors.contact === '') {
-    errors.contact = 'Contact must no be empty!';
-  } else {
-    isValid = true;
-  }
-  return isValid;
-};
+//   console.log(Object.values(errors));
+//   if (errors.studentId === '') {
+//     errors.studentId = 'Student ID/AP must no be empty!';
+//   } else if (errors.firstName === '') {
+//     errors.firstName = 'First Name must no be empty!';
+//   } else if (errors.lastName === '') {
+//     errors.lastName = 'Last Name must no be empty!';
+//   } else if (errors.email === '') {
+//     errors.email = 'Email must no be empty!';
+//   } else if (errors.contact === '') {
+//     errors.contact = 'Contact must no be empty!';
+//   } else {
+//     isValid = true;
+//   }
+//   return isValid;
+// };
 
 class UserRegistration extends Component {
   constructor(props) {
@@ -52,6 +50,13 @@ class UserRegistration extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  clearForm() {
+    const student = this.state;
+    student.studentId = '';
+    student.firstName = '';
+    student.lastName = '';
+    student.email = '';
+  }
   handleChange(event) {
     let { name, value } = event.target;
     let errors = this.state.errors;
@@ -97,27 +102,21 @@ class UserRegistration extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (checkBeforeFormSubmit() === true) {
-      if (validateForm(this.state.errors)) {
-        console.info('Valid Form');
-        Api.post('student/createStudent.php', this.state, {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          }
+    if (validateForm(this.state.errors)) {
+      console.info('Valid Form');
+      Api.post('student/createStudent.php', JSON.stringify(this.state), {
+        headers: {
+          'Content-Type': 'text/plain'
+        }
+      })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data);
+          this.clearForm();
         })
-          .then((res) => {
-            console.log(res);
-            console.log(res.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        console.info('inValid Form');
-        this.state.errors.formErrorMsg =
-          'Please check all the fields before submitting it!';
-      }
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }
 
