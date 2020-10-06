@@ -38,8 +38,6 @@ class UserRegistration extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      successMsg: '',
-      showAlert: false,
       errors: {
         studentId: '',
         firstName: '',
@@ -58,8 +56,7 @@ class UserRegistration extends Component {
       studentId: '',
       firstName: '',
       lastName: '',
-      email: '',
-      showAlert: true
+      email: ''
     });
   }
   handleChange(event) {
@@ -117,7 +114,7 @@ class UserRegistration extends Component {
         .then((res) => {
           console.log(res);
           console.log(res.data);
-          this.state.successMsg = res.data.message;
+          this.props.history.push('/');
           this.clearForm();
         })
         .catch((error) => {
@@ -152,9 +149,6 @@ class UserRegistration extends Component {
                   onSubmit={this.handleSubmit}
                   noValidate
                 >
-                  <Alert variant='success' show={this.state.showAlert}>
-                    <Alert.Heading>{this.state.successMsg}</Alert.Heading>
-                  </Alert>
                   <br />
                   <div className='form-group'>
                     <label htmlFor='ap/id'>IP/AP Number</label>
