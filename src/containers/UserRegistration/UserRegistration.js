@@ -135,12 +135,12 @@ class UserRegistration extends Component {
               <div className='card' style={{ border: 'none' }}>
                 <div
                   className='card-header'
-                  style={{ backgroundColor: '#FFF' }}
+                  style={{ backgroundColor: '#288cd7', color: '#FFF' }}
                 >
                   <img
                     src={require('../../assets/Images/officialLogo.png')}
                     alt='weltec'
-                    width='170'
+                    width='200'
                   />
                 </div>
                 <form

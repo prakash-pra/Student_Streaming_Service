@@ -15,12 +15,9 @@ class loginUser extends Component {
             top: 100
           }}
         >
-          <div
-            className='card-header'
-            style={{ backgroundColor: '#1f9ed9', textAlign: 'center' }}
-          >
+          <div className='card-header' style={{ backgroundColor: '#288cd7' }}>
             <img
-              src={require('../../assets/Images/weltec-logo.svg')}
+              src={require('../../assets/Images/officialLogo.png')}
               alt='weltec'
               width='170'
             />
