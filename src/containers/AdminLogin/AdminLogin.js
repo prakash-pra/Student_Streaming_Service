@@ -15,11 +15,11 @@ class AdminLogin extends Component {
             top: 100
           }}
         >
-          <div className='card-header' style={{ backgroundColor: '#288cd7' }}>
+          <div className='card-header' style={{ backgroundColor: '#008da5' }}>
             <img
               src={require('../../assets/Images/officialLogo.png')}
               alt='weltec'
-              width='170'
+              width='190'
             />
           </div>
           <form className='form-signin'>
