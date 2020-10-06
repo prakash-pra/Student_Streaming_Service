@@ -16,11 +16,11 @@ class loginUser extends Component {
           }}
         >
           <div className='card-header' style={{ backgroundColor: '#008da5' }}>
-            <img
+            <center><img
               src={require('../../assets/Images/officialLogo.png')}
               alt='weltec'
               width='190'
-            />
+            /></center>
           </div>
           <form className='form-signin'>
             <br />
@@ -42,7 +42,8 @@ class loginUser extends Component {
               />
             </div>
             <button
-              className='text-white btn btn-primary btn-lg btn-block'
+              style={{backgroundColor: '#008da5'}}
+              className='text-white btn btn-lg btn-block'      
               type='submit'
             >
               Sign in
