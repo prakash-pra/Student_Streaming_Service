@@ -51,7 +51,6 @@ class UserRegistration extends Component {
   }
 
   clearForm() {
-    console.log('clear form');
     this.setState({
       studentId: '',
       firstName: '',
@@ -136,10 +135,10 @@ class UserRegistration extends Component {
               <div className='card' style={{ border: 'none' }}>
                 <div
                   className='card-header'
-                  style={{ backgroundColor: '#1f9ed9', textAlign: 'center' }}
+                  style={{ backgroundColor: '#FFF' }}
                 >
                   <img
-                    src={require('../../assets/Images/weltec-logo.svg')}
+                    src={require('../../assets/Images/officialLogo.png')}
                     alt='weltec'
                     width='170'
                   />
