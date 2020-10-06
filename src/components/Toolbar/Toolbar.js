@@ -5,7 +5,7 @@ const toolbar = (props) => (
   <nav className={'navbar fixed-top mainNavbar'}>
     <Link className='navbar-brand' to='/dashboad'>
       <img
-        src={require('../../assets/Images/weltec-logo.svg')}
+        src={require('../../assets/Images/officialLogo.png')}
         alt='WelTec logo'
         width='150'
       />
