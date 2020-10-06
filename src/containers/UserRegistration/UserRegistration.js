@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
 import { Link } from 'react-router-dom';
 import Api from '../../constants/axios';
+import { Alert } from 'react-bootstrap';
 const validEmailRegex = RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
 const validateForm = (errors) => {
   let valid = true;
@@ -37,6 +38,8 @@ class UserRegistration extends Component {
       firstName: '',
       lastName: '',
       email: '',
+      successMsg: '',
+      showAlert: false,
       errors: {
         studentId: '',
         firstName: '',
@@ -50,11 +53,14 @@ class UserRegistration extends Component {
   }
 
   clearForm() {
-    const student = this.state;
-    student.studentId = '';
-    student.firstName = '';
-    student.lastName = '';
-    student.email = '';
+    console.log('clear form');
+    this.setState({
+      studentId: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      showAlert: true
+    });
   }
   handleChange(event) {
     let { name, value } = event.target;
@@ -111,6 +117,7 @@ class UserRegistration extends Component {
         .then((res) => {
           console.log(res);
           console.log(res.data);
+          this.state.successMsg = res.data.message;
           this.clearForm();
         })
         .catch((error) => {
@@ -145,7 +152,9 @@ class UserRegistration extends Component {
                   onSubmit={this.handleSubmit}
                   noValidate
                 >
-                  <div className='text-danger'>{errors.formErrorMsg}</div>
+                  <Alert variant='success' show={this.state.showAlert}>
+                    <Alert.Heading>{this.state.successMsg}</Alert.Heading>
+                  </Alert>
                   <br />
                   <div className='form-group'>
                     <label htmlFor='ap/id'>IP/AP Number</label>
