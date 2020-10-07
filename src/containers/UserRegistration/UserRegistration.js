@@ -115,11 +115,13 @@ class UserRegistration extends Component {
                   className='card-header'
                   style={{ backgroundColor: '#008da5' }}
                 >
-                  <img
-                    src={require('../../assets/Images/officialLogo.png')}
-                    alt='weltec'
-                    width='190'
-                  />
+                  <center>
+                    <img
+                      src={require('../../assets/Images/officialLogo.png')}
+                      alt='weltec'
+                      width='190'
+                    />
+                  </center>
                 </div>
                 <form
                   className='form-signin'
@@ -190,6 +192,7 @@ class UserRegistration extends Component {
                     )}
                   </div>
                   <button
+                    style={{backgroundColor: '#008da5'}}
                     className='text-white btn btn-primary btn-lg btn-block'
                     type='submit'
                   >
