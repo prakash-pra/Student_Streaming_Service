@@ -2,34 +2,12 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
 import { Link } from 'react-router-dom';
 import Api from '../../constants/axios';
-import { Alert } from 'react-bootstrap';
 const validEmailRegex = RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
 const validateForm = (errors) => {
   let valid = true;
   Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
   return valid;
 };
-
-// const checkBeforeFormSubmit = (errors) => {
-//   let isValid = false;
-
-//   console.log(Object.values(errors));
-//   if (errors.studentId === '') {
-//     errors.studentId = 'Student ID/AP must no be empty!';
-//   } else if (errors.firstName === '') {
-//     errors.firstName = 'First Name must no be empty!';
-//   } else if (errors.lastName === '') {
-//     errors.lastName = 'Last Name must no be empty!';
-//   } else if (errors.email === '') {
-//     errors.email = 'Email must no be empty!';
-//   } else if (errors.contact === '') {
-//     errors.contact = 'Contact must no be empty!';
-//   } else {
-//     isValid = true;
-//   }
-//   return isValid;
-// };
-
 class UserRegistration extends Component {
   constructor(props) {
     super(props);
