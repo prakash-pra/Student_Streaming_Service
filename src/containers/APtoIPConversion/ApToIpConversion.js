@@ -1,33 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import Api from '../../constants/axios';
 import Aux from '../../hoc/Auxi';
 
 const APtoIPConversion = () => {
   const [show, setShow] = useState(false);
-
+  const [students, setStudent] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  useEffect(() => {
+    Api.post('student/getAllStudent.php', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((res) => {
+        // console.log(res.data.students.records);
+        setStudent(res.data.students.records);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+  }, []);
+
   return (
     <Aux>
-      <div class='col py-3 px-lg-5 offset-md-1'>
+      <div className='col py-3 px-lg-5 offset-md-1'>
         <h3>AP to ID Number Conversion</h3>
 
-        <div class='input-group mb-3'>
+        <div className='input-group mb-3'>
           <input
             type='text'
-            class='form-control'
+            className='form-control'
             placeholder='Search student name'
             aria-label='Search student name'
             aria-describedby='searchStudAPID'
           />
-          <div class='input-group-append'>
-            <button class='btn btn-primary' type='button' id='searchStudAPID'>
+          <div className='input-group-append'>
+            <button
+              className='btn btn-primary'
+              type='button'
+              id='searchStudAPID'
+            >
               Search
             </button>
           </div>
         </div>
-        <table class='table table-hover'>
-          <thead class='thead-dark'>
+        <table className='table table-hover'>
+          <thead className='thead-dark'>
             <tr>
               <th scope='col'>Student Name</th>
               <th scope='col'>AP Number</th>
@@ -36,44 +56,26 @@ const APtoIPConversion = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row'>Student Name 1</th>
-              <td>111</td>
-              <td></td>
-              <td>
-                <button
-                  class='btn btn-danger'
-                  type='button'
-                  onClick={handleShow}
-                >
-                  Convert
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <th scope='row'>Student Name 2</th>
-              <td>Converted</td>
-              <td>111</td>
-              <td>
-                <span class='' id='convertAPID'>
-                  None
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th scope='row'>Student Name 3</th>
-              <td>123</td>
-              <td></td>
-              <td>
-                <button
-                  class='btn btn-danger'
-                  type='button'
-                  onClick={handleShow}
-                >
-                  Convert
-                </button>
-              </td>
-            </tr>
+            {students.map((value, index) => {
+              return (
+                <tr key={index}>
+                  <th scope='row'>
+                    {value.firstName} {value.lastName}
+                  </th>
+                  <td></td>
+                  <td>{value.studentId}</td>
+                  <td>
+                    <button
+                      className='btn btn-danger'
+                      type='button'
+                      onClick={handleShow}
+                    >
+                      Convert
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -84,17 +86,17 @@ const APtoIPConversion = () => {
         </Modal.Header>
         <Modal.Body>
           <form>
-            <div class='form-group'>
-              <label for='apNum' class='col-form-label'>
+            <div className='form-group'>
+              <label htmlFor='apNum' className='col-form-label'>
                 AP Number
               </label>
-              <input type='text' class='form-control' />
+              <input type='text' className='form-control' />
             </div>
-            <div class='form-group'>
-              <label for='idNum' class='col-form-label'>
+            <div className='form-group'>
+              <label htmlFor='idNum' className='col-form-label'>
                 ID Number
               </label>
-              <input type='text' class='form-control' />
+              <input type='text' className='form-control' />
             </div>
           </form>
         </Modal.Body>

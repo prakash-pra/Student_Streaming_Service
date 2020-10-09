@@ -36,11 +36,9 @@ class AdminLogin extends Component {
       .then((res) => {
         console.log(res.data.jwt);
         localStorage.setItem('jwt', res.data.jwt);
-      })
-      .then(async (res) => {
         const token = localStorage.getItem('jwt');
-        if (token) {
-          await this.setState({ loggedIn: true });
+        if (token == null) {
+          this.setState({ loggedIn: true });
         }
       })
       .catch((error) => {
