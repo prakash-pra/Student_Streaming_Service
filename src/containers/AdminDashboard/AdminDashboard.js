@@ -10,8 +10,21 @@ import Spreadsheet from '../SpreadSheet/SpreadSheet';
 import Report from '../ReportSummary/ReportSummary';
 import Warnings from '../StudentWarning/StudentWarning';
 import Home from '../../containers/AdminHome/AdminHome';
+import { Redirect } from 'react-router-dom';
 
 class AdminDashboard extends Component {
+  constructor(props) {
+    super(props);
+    const token = localStorage.getItem('jwt');
+    console.log(token);
+    let loggedIn = true;
+    if (token == null) {
+      loggedIn = false;
+    }
+    this.state = {
+      loggedIn
+    };
+  }
   renderSwitch = () => {
     let params = this.props.match.params.name;
     console.log(params);
@@ -42,7 +55,9 @@ class AdminDashboard extends Component {
     }
   };
   render() {
-    console.log(this.props);
+    if (this.state.loggedIn === false) {
+      return <Redirect to='/administration' />;
+    }
     return (
       <Aux>
         <div>

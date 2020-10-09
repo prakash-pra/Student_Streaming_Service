@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
-import { Link } from 'react-router-dom';
 import Api from '../../constants/axios';
 import { Alert } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
 class loginUser extends Component {
   constructor(props) {
     super(props);
+    const token = localStorage.getItem('jwt');
+    let loggedIn = true;
+    if (token === null) {
+      loggedIn = false;
+    }
     this.state = {
       studentId: '',
       email: '',
       errorMsg: '',
-      showAlert: false
+      showAlert: false,
+      loggedIn
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,12 +34,13 @@ class loginUser extends Component {
       }
     })
       .then((res) => {
-        // console.log(res);
-        // console.log(res.data);
         localStorage.setItem('jwt', res.data.jwt);
+        const token = localStorage.getItem('jwt');
+        if (token) {
+          this.setState({ loggedIn: true });
+        }
       })
       .catch((error) => {
-        // console.log(error.response.data.message);
         this.setState({
           showAlert: true,
           errorMsg: error.response.data.message
@@ -41,6 +48,9 @@ class loginUser extends Component {
       });
   }
   render() {
+    if (this.state.loggedIn) {
+      return <Redirect to='/user_dashboard' />;
+    }
     return (
       <Aux>
         <div
@@ -54,11 +64,13 @@ class loginUser extends Component {
           }}
         >
           <div className='card-header' style={{ backgroundColor: '#008da5' }}>
-            <center><img
-              src={require('../../assets/Images/officialLogo.png')}
-              alt='weltec'
-              width='190'
-            /></center>
+            <center>
+              <img
+                src={require('../../assets/Images/officialLogo.png')}
+                alt='weltec'
+                width='190'
+              />
+            </center>
           </div>
           <form className='form-signin' onSubmit={this.handleSubmit}>
             <br />
@@ -95,8 +107,8 @@ class loginUser extends Component {
               />
             </div>
             <button
-              style={{backgroundColor: '#008da5'}}
-              className='text-white btn btn-lg btn-block'      
+              style={{ backgroundColor: '#008da5' }}
+              className='text-white btn btn-lg btn-block'
               type='submit'
             >
               Sign in
@@ -124,17 +136,17 @@ class loginUser extends Component {
               >
                 or
               </p>
-              <a
-                href='home'
+              <Link
                 className='text-decoration-none'
                 style={{
                   fontSize: '16px',
                   textTransform: 'uppercase',
                   fontWeight: '500'
                 }}
+                to='/user_dashboard/'
               >
                 Continue as guest
-              </a>
+              </Link>
             </div>
           </form>
         </div>
