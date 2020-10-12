@@ -37,8 +37,6 @@ export default class streamTable extends Component {
     })
       .then((res) => {
         console.log(res.data.spreadsheet.records);
-        // this.setState({ spreadsheet: res.data.spreadsheet.records });
-        // setStudent(res.data.spreadsheet.records);
         this.spreadsheetData(res.data.spreadsheet.records);
       })
       .catch((error) => {
