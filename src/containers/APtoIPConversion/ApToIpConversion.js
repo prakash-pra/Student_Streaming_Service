@@ -62,8 +62,8 @@ const APtoIPConversion = () => {
                   <th scope='row'>
                     {value.firstName} {value.lastName}
                   </th>
-                  <td></td>
                   <td>{value.studentId}</td>
+                  <td></td>
                   <td>
                     <button
                       className='btn btn-danger'

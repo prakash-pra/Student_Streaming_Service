@@ -1,7 +1,57 @@
 import React, { Component } from 'react';
-
+import Api from '../../constants/axios';
 export default class streamTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spreadsheet: []
+    };
+  }
+
+  spreadsheetData = (data) => {
+    let spreadsheetObj = [];
+    for (let i = 2; i < data.length; i++) {
+      let obj = {
+        courseName: data[i].courseName,
+        program: data[i].program,
+        campus: data[i].campus,
+        credit: data[i].credit,
+        stream: data[i].stream,
+        tutor: data[i].tutor,
+        monday: data[i].monday,
+        tuesday: data[i].tuesday,
+        wednesday: data[i].wednesday,
+        thursday: data[i].thursday,
+        friday: data[i].friday
+      };
+      spreadsheetObj.push(Object.assign({}, obj));
+    }
+    this.setState({ spreadsheet: spreadsheetObj });
+  };
+
+  componentDidMount() {
+    Api.get('spreadsheet/getSpreadsheetData.php', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((res) => {
+        console.log(res.data.spreadsheet.records);
+        // this.setState({ spreadsheet: res.data.spreadsheet.records });
+        // setStudent(res.data.spreadsheet.records);
+        this.spreadsheetData(res.data.spreadsheet.records);
+      })
+      .catch((error) => {
+        console.log(error.response.data.message);
+      });
+  }
+
   render() {
+    // {
+    //   this.state.spreadsheet.map((value, index) => {
+    //     console.log(value.courseName);
+    //   });
+    // }
     return (
       <div className='container-fluid' style={{ marginTop: '40px' }}>
         <div className='row'>
@@ -18,257 +68,64 @@ export default class streamTable extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>Security Testing and NetWork Defence</li>
-                      <li>
-                        <b>Paul Bryant</b>
-                      </li>
-                      <li>Weltec</li>
-                      <li>IA7308</li>
-                      <li>Credit : 15</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>(11am - 1pm) - B101 - Lecture - IA7308</li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>(10am - 1pm) - B202 - Lecture - IA7308</li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>IA7307 Criptography and Security Mechanisms</li>
-                      <li>
-                        <b>Manish Singh</b>
-                      </li>
-                      <li>Weltec</li>
-                      <li>IA7307</li>
-                      <li>Credit : 15</li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>(11am - 1pm) - B108 - Lecture - IA7307</li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>(10am - 12pm) - B207 - Lab - IA7307</li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>IT7502 Digital Ethics</li>
-                      <li>
-                        <b>Dr. Steve Mckinlay</b>
-                      </li>
-                      <li>Credit : 15</li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>(1pm - 3pm) - C303 - Lab - IT7502</li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>CS7506 Cloud Security</li>
-                      <li>
-                        <b>Dr. Dax Roberts</b>
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Time : </b>1pm - 2pm
-                      </li>
-                      <li>
-                        <b>Lecture : </b>C117
-                      </li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>SD7502 Intelligent System Devlopment</li>
-                      <li>
-                        <b>Dr. Waqar Khan</b>
-                      </li>
-                      <li>Credit : 15</li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Time : </b>8am - 9am
-                      </li>
-                      <li>
-                        <b>Lecture : </b>C117
-                      </li>
-                      <hr />
-                      <li>
-                        <b>Time : </b>8am - 9am
-                      </li>
-                      <li>
-                        <b>Lab : </b>B108
-                      </li>
-
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <ul style={{ listStyle: 'none' }}>
-                      <li>
-                        <b>Time : </b>8am - 11am
-                      </li>
-                      <li>
-                        <b>Lab : </b>B108
-                      </li>
-                      <li>
-                        <label
-                          className='form-check-label'
-                          for='confirm-course'
-                        >
-                          <b>Select Stream : </b>
-                        </label>
-                        <input
-                          type='checkbox'
-                          name='checkbox'
-                          id='confirm-course'
-                          value='15'
-                          onclick='checkCredit()'
-                        />
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
+                {this.state.spreadsheet.map((value, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.courseName}</li>
+                          <li>
+                            <b>{value.tutor}</b>
+                          </li>
+                          <li>{value.campus}</li>
+                          <li>{value.program}</li>
+                          <li>Credit : {value.credit}</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.monday}</li>
+                          <li>
+                            <label
+                              className='form-check-label'
+                              htmlFor='confirm-course'
+                            >
+                              <b>Select Stream : </b>
+                            </label>
+                            <input
+                              type='checkbox'
+                              name='checkbox'
+                              id='confirm-course'
+                              value='15'
+                            />
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.tuesday}</li>
+                          <li>
+                            <label
+                              className='form-check-label'
+                              htmlFor='confirm-course'
+                            >
+                              <b>Select Stream : </b>
+                            </label>
+                            <input
+                              type='checkbox'
+                              name='checkbox'
+                              id='confirm-course'
+                              value='15'
+                            />
+                          </li>
+                        </ul>
+                      </td>
+                      <td>{value.wednesday}</td>
+                      <td>{value.thursday}</td>
+                      <td>{value.friday}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
