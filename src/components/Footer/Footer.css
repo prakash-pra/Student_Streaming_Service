@@ -5,6 +5,18 @@
   bottom: '0';
   right: '0';
 }
-.backgroundColor {
+/*.backgroundColor {
   background-color: '#1f9ed9';
 }
+*/
+.footerColorSidebar {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.containerF {
+      width: auto;
+      max-width: 680px;
+      padding: 0 15px;
+    }
