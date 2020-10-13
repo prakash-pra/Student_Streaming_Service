@@ -70,7 +70,11 @@ export default class streamTable extends Component {
                           <li>
                             Tutor: {value.tutor}
                           </li>
+<<<<<<< HEAD
                           <li>Campus: {value.campus}</li>
+=======
+                          <li>{value.campus}</li>
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                           <li>Program: {value.program}</li>
                           <li>Credit : {value.credit}</li>
                         </ul>
@@ -82,12 +86,21 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
+<<<<<<< HEAD
                                 htmlFor='confirm-course-m'
                               >Select course: </label>
                               {' '}<input
                                 type='checkbox'
                                 name='checkbox'
                                 id='confirm-course-m'
+=======
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                                 value='15'
                               />
                             </li>
@@ -103,12 +116,21 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
+<<<<<<< HEAD
                                 htmlFor='confirm-course-t'
                               >Select course:</label>
                               {' '}<input
                                 type='checkbox'
                                 name='checkbox'
                                 id='confirm-course-t'
+=======
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                                 value='15'
                               />
                             </li>
@@ -124,12 +146,21 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
+<<<<<<< HEAD
                                 htmlFor='confirm-course-w'
                               >Select course:</label>
                               {' '}<input
                                 type='checkbox'
                                 name='checkbox'
                                 id='confirm-course-w'
+=======
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                                 value='15'
                               />
                             </li>
@@ -145,12 +176,21 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
+<<<<<<< HEAD
                                 htmlFor='confirm-course-th'
                               >Select course:</label>
                               {' '}<input
                                 type='checkbox'
                                 name='checkbox'
                                 id='confirm-course-th'
+=======
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                                 value='15'
                               />
                             </li>
@@ -166,12 +206,21 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
+<<<<<<< HEAD
                                 htmlFor='confirm-course-f'
                               >Select course:</label>
                               {' '}<input
                                 type='checkbox'
                                 name='checkbox'
                                 id='confirm-course-f'
+=======
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+>>>>>>> 9923b8d0abfc697cbedd88cad78ffe1f12429458
                                 value='15'
                               />
                             </li>

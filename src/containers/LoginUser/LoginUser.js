@@ -35,10 +35,7 @@ class loginUser extends Component {
     })
       .then((res) => {
         localStorage.setItem('jwt', res.data.jwt);
-        const token = localStorage.getItem('jwt');
-        if (token) {
-          this.setState({ loggedIn: true });
-        }
+        this.setState({ loggedIn: true });
       })
       .catch((error) => {
         this.setState({
