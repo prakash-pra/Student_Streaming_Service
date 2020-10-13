@@ -44,10 +44,6 @@ class SpreadSheet extends Component {
       })
       .catch((error) => {
         console.log(error);
-        // this.setState({
-        //   showAlert: true,
-        //   errorMsg: error.response.data.message
-        // });
       });
   };
   render() {
