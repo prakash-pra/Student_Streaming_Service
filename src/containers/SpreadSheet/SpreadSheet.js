@@ -1,6 +1,52 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
+import Api from '../../constants/axios';
+
 class SpreadSheet extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedFile: null,
+      fileName: ''
+    };
+    this.handleChange = this.onFileChange.bind(this);
+    this.handleSubmit = this.fileUpload.bind(this);
+  }
+  onFileChange = (event) => {
+    console.log(event.target.files[0]);
+    this.setState({ selectedFile: event.target.files[0] });
+    this.setState({ fileName: event.target.files[0].name });
+  };
+
+  fileUpload = (event) => {
+    event.preventDefault();
+
+    // Create an object of formData
+    const formData = new FormData();
+
+    // Update the formData object
+    formData.append(
+      'spreadsheet',
+      this.state.selectedFile,
+      this.state.selectedFile.name
+    );
+
+    // Details of the uploaded file
+    console.log(this.state.selectedFile);
+
+    Api.post('spreadsheet/spreadsheet.php', formData)
+
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        this.setState({
+          showAlert: true,
+          errorMsg: error.response.data.message
+        });
+      });
+  };
   render() {
     return (
       <Aux>
@@ -19,16 +65,25 @@ class SpreadSheet extends Component {
                     type='file'
                     className='custom-file-input'
                     id='inputGroupFile01'
+                    value=''
                     aria-describedby='inputGroupFileAddon01'
+                    onChange={this.onFileChange}
                   />
-                  <label className='custom-file-label' for='inputGroupFile01'>
+                  <label
+                    className='custom-file-label'
+                    htmlFor='inputGroupFile01'
+                  >
                     Choose file
                   </label>
                 </div>
               </div>
             </div>
             <div className='mt-4'>
-              <button type='button' className='btn btn-primary'>
+              <button
+                type='button'
+                className='btn btn-primary'
+                onChange={this.onFileUpload}
+              >
                 Upload
               </button>
             </div>

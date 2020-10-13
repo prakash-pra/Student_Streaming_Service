@@ -95,7 +95,7 @@ class AdminLogin extends Component {
             </div>
 
             <div className='form-group'>
-              <label htmlFor='email'>Password</label>
+              <label htmlFor='password'>Password</label>
               <input
                 type='pasword'
                 name='adminpassword'
