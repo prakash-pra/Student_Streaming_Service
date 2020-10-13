@@ -50,7 +50,10 @@ export default class streamTable extends Component {
         <div className='row'>
           <div className='col' style={{ marginTop: '25px' }}>
             <table className='table table-bordered'>
-              <thead className='bg-light text-dark'>
+              <thead
+                style={{ backgroundColor: '#374e59' }}
+                className='text-white'
+              >
                 <tr>
                   <th scope='col'>Courses</th>
                   <th scope='col'>Monday</th>
@@ -66,11 +69,11 @@ export default class streamTable extends Component {
                     <tr key={index}>
                       <td>
                         <ul style={{ listStyle: 'none' }}>
-                          <li>{value.courseName}</li>
                           <li>
-                            <b>{value.tutor}</b>
+                            <b>{value.courseName}</b>
                           </li>
-                          <li>{value.campus}</li>
+                          <li>Tutor: {value.tutor}</li>
+                          <li>Campus: {value.campus}</li>
                           <li>Program: {value.program}</li>
                           <li>Credit : {value.credit}</li>
                         </ul>
@@ -82,12 +85,14 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
-                                htmlFor='confirm-course'
-                              ></label>
+                                htmlFor='confirm-course-m'
+                              >
+                                Select course:{' '}
+                              </label>{' '}
                               <input
                                 type='checkbox'
                                 name='checkbox'
-                                id='confirm-course'
+                                id='confirm-course-m'
                                 value='15'
                               />
                             </li>
@@ -124,12 +129,14 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
-                                htmlFor='confirm-course'
-                              ></label>
+                                htmlFor='confirm-course-w'
+                              >
+                                Select course:
+                              </label>{' '}
                               <input
                                 type='checkbox'
                                 name='checkbox'
-                                id='confirm-course'
+                                id='confirm-course-w'
                                 value='15'
                               />
                             </li>
@@ -145,12 +152,14 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
-                                htmlFor='confirm-course'
-                              ></label>
+                                htmlFor='confirm-course-th'
+                              >
+                                Select course:
+                              </label>{' '}
                               <input
                                 type='checkbox'
                                 name='checkbox'
-                                id='confirm-course'
+                                id='confirm-course-th'
                                 value='15'
                               />
                             </li>
@@ -166,12 +175,14 @@ export default class streamTable extends Component {
                             <li>
                               <label
                                 className='form-check-label'
-                                htmlFor='confirm-course'
-                              ></label>
+                                htmlFor='confirm-course-f'
+                              >
+                                Select course:
+                              </label>{' '}
                               <input
                                 type='checkbox'
                                 name='checkbox'
-                                id='confirm-course'
+                                id='confirm-course-f'
                                 value='15'
                               />
                             </li>
