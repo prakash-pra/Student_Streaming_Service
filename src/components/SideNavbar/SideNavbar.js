@@ -17,7 +17,7 @@ const navigation = [
     label: 'Home',
     icon: <Home />,
     disable: true,
-    style: 'sidebarlink'
+    style: 'mainsidebarheading'
   },
   {
     url: 'ap_conversion',
@@ -36,7 +36,7 @@ const navigation = [
   {
     name: 'Extraction and Report',
     label: 'Extraction and Report',
-    style: 'sidebar-heading',
+    style: 'mainsidebarheading',
     disable: true
   },
   {
@@ -56,7 +56,7 @@ const navigation = [
   {
     name: 'Spreadsheet',
     label: 'Spreadsheet',
-    style: 'sidebar-heading',
+    style: 'mainsidebarheading',
     disable: true
   },
   {
@@ -69,7 +69,7 @@ const navigation = [
   {
     name: 'Reports',
     label: 'Reports',
-    style: 'sidebar-heading',
+    style: 'mainsidebarheading',
     disable: true
   },
   {
@@ -91,9 +91,8 @@ const navigation = [
 const sidenavbar = (props) => {
   return (
     <Aux>
-      <nav className='bg-light sidebar'>
+      <nav className='bg-light'>
         <div className='sidebar-sticky'>
-        <br /><br /><br />
           <ul className='nav flex-column'>
             {navigation.map((value, index) => {
               return (

@@ -49,7 +49,7 @@ class SpreadSheet extends Component {
   render() {
     return (
       <Aux>
-        <div className='col py-3 px-lg-5'>
+        <div className='col py-3 px-lg-5 offset-md-1'>
           <h3>Spreadsheet</h3>
           <hr />
           <Alert

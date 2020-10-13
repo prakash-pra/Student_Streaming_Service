@@ -25,7 +25,7 @@ const APtoIPConversion = () => {
 
   return (
     <Aux>
-      <div className='col py-3 px-lg-5'>
+      <div className='col py-3 px-lg-5 offset-md-1'>
         <h3>AP to ID Number Conversion</h3>
 
         <div className='input-group mb-3'>
@@ -50,7 +50,8 @@ const APtoIPConversion = () => {
           <thead className='thead-dark'>
             <tr>
               <th scope='col'>Student Name</th>
-              <th scope='col'>AP/ID Number</th>
+              <th scope='col'>AP Number</th>
+              <th scope='col'>ID Number</th>
               <th scope='col'>Action</th>
             </tr>
           </thead>
@@ -62,6 +63,7 @@ const APtoIPConversion = () => {
                     {value.firstName} {value.lastName}
                   </th>
                   <td>{value.studentId}</td>
+                  <td></td>
                   <td>
                     <button
                       className='btn btn-danger'
@@ -103,7 +105,7 @@ const APtoIPConversion = () => {
             Close
           </Button>
           <Button variant='primary' onClick={handleClose}>
-            Convert
+            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
