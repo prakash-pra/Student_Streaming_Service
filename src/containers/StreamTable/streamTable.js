@@ -10,7 +10,7 @@ export default class streamTable extends Component {
 
   spreadsheetData = (data) => {
     let spreadsheetObj = [];
-    for (let i = 2; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       let obj = {
         courseName: data[i].courseName,
         program: data[i].program,
@@ -45,11 +45,6 @@ export default class streamTable extends Component {
   }
 
   render() {
-    // {
-    //   this.state.spreadsheet.map((value, index) => {
-    //     console.log(value.courseName);
-    //   });
-    // }
     return (
       <div className='container-fluid' style={{ marginTop: '40px' }}>
         <div className='row'>
@@ -76,51 +71,115 @@ export default class streamTable extends Component {
                             <b>{value.tutor}</b>
                           </li>
                           <li>{value.campus}</li>
-                          <li>{value.program}</li>
+                          <li>Program: {value.program}</li>
                           <li>Credit : {value.credit}</li>
                         </ul>
                       </td>
                       <td>
                         <ul style={{ listStyle: 'none' }}>
                           <li>{value.monday}</li>
-                          <li>
-                            <label
-                              className='form-check-label'
-                              htmlFor='confirm-course'
-                            >
-                              <b>Select Stream : </b>
-                            </label>
-                            <input
-                              type='checkbox'
-                              name='checkbox'
-                              id='confirm-course'
-                              value='15'
-                            />
-                          </li>
+                          {value.monday !== '' ? (
+                            <li>
+                              <label
+                                className='form-check-label'
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+                                value='15'
+                              />
+                            </li>
+                          ) : (
+                            ''
+                          )}
                         </ul>
                       </td>
                       <td>
                         <ul style={{ listStyle: 'none' }}>
                           <li>{value.tuesday}</li>
-                          <li>
-                            <label
-                              className='form-check-label'
-                              htmlFor='confirm-course'
-                            >
-                              <b>Select Stream : </b>
-                            </label>
-                            <input
-                              type='checkbox'
-                              name='checkbox'
-                              id='confirm-course'
-                              value='15'
-                            />
-                          </li>
+                          {value.tuesday !== '' ? (
+                            <li>
+                              <label
+                                className='form-check-label'
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+                                value='15'
+                              />
+                            </li>
+                          ) : (
+                            ''
+                          )}
                         </ul>
                       </td>
-                      <td>{value.wednesday}</td>
-                      <td>{value.thursday}</td>
-                      <td>{value.friday}</td>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.wednesday}</li>
+                          {value.wednesday !== '' ? (
+                            <li>
+                              <label
+                                className='form-check-label'
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+                                value='15'
+                              />
+                            </li>
+                          ) : (
+                            ''
+                          )}
+                        </ul>
+                      </td>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.thursday}</li>
+                          {value.thursday !== '' ? (
+                            <li>
+                              <label
+                                className='form-check-label'
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+                                value='15'
+                              />
+                            </li>
+                          ) : (
+                            ''
+                          )}
+                        </ul>
+                      </td>
+                      <td>
+                        <ul style={{ listStyle: 'none' }}>
+                          <li>{value.friday}</li>
+                          {value.friday !== '' ? (
+                            <li>
+                              <label
+                                className='form-check-label'
+                                htmlFor='confirm-course'
+                              ></label>
+                              <input
+                                type='checkbox'
+                                name='checkbox'
+                                id='confirm-course'
+                                value='15'
+                              />
+                            </li>
+                          ) : (
+                            ''
+                          )}
+                        </ul>
+                      </td>
                     </tr>
                   );
                 })}

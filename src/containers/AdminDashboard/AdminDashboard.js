@@ -17,9 +17,8 @@ class AdminDashboard extends Component {
   constructor(props) {
     super(props);
     const token = localStorage.getItem('jwt');
-    console.log(token);
     let loggedIn = true;
-    if (token == null) {
+    if (token === null) {
       loggedIn = false;
     }
     this.state = {

@@ -37,7 +37,7 @@ class AdminLogin extends Component {
         console.log(res.data.jwt);
         localStorage.setItem('jwt', res.data.jwt);
         const token = localStorage.getItem('jwt');
-        if (token == null) {
+        if (token) {
           this.setState({ loggedIn: true });
         }
       })
@@ -49,8 +49,8 @@ class AdminLogin extends Component {
       });
   }
   render() {
-    console.log(this.state.loggedIn);
     if (this.state.loggedIn) {
+      console.log('render');
       return <Redirect to='/admin_dashboard/' />;
     }
     return (
@@ -97,7 +97,9 @@ class AdminLogin extends Component {
             </div>
 
             <div className='form-group'>
+
               <label htmlFor='adminpassword'>Password</label>
+
               <input
                 style = {{WebkitTextSecurity: 'disc'}}
                 type='pasword'
