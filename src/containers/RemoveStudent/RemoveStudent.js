@@ -8,7 +8,7 @@ const RemoveStudent = () => {
   const handleShow = () => setShow(true);
   return (
     <Aux>
-      <div class='col py-3 px-lg-5'>
+      <div class='col py-3 px-lg-5 offset-md-1'>
         <h3>Removal of Student from Course</h3>
         <hr></hr>
         <div class='input-group mb-3'>
@@ -97,6 +97,50 @@ const RemoveStudent = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      {/* <div
+        class='modal fade'
+        id='removeModal'
+        tabindex='-1'
+        role='dialog'
+        aria-labelledby='exampleModalLabel'
+        aria-hidden='true'
+      >
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title' id='exampleModalLabel'>
+                Remove Student
+              </h5>
+              <button
+                type='button'
+                class='close'
+                data-dismiss='modal'
+                aria-label='Close'
+              >
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+              <span>
+                Are you sure to remove this Student(s) from the Stream?
+              </span>
+            </div>
+            <div class='modal-footer'>
+              <button
+                type='button'
+                class='btn bg-danger text-white'
+                data-dismiss='modal'
+              >
+                Cancel
+              </button>
+              <button type='button' class='btn weltecColor text-white'>
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </Aux>
   );
 };

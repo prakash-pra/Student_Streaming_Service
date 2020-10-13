@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
 import Toolbar from '../../components/Toolbar/Toolbar';
-import Footer from '../../components/Footer/Footer';
 import SideNavbar from '../../components/SideNavbar/SideNavbar';
 import APConversion from '../APtoIPConversion/ApToIpConversion';
 import RemoveStudent from '../RemoveStudent/RemoveStudent';
@@ -70,7 +69,6 @@ class AdminDashboard extends Component {
               <div className='col-md-8'>{this.renderSwitch()}</div>
             </div>
           </div>
-          <Footer />
         </div>
       </Aux>
     );

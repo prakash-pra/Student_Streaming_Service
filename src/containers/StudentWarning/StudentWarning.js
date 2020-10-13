@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Aux from '../../hoc/Auxi';
-import { Modal, Button } from 'react-bootstrap';
-import { Printer } from 'react-feather';
-const StudentWarning = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+class StudentWarning extends Component {
+  render() {
     return (
       <Aux>
-        <div className='col py-3 px-lg-5'>
+        <div className='col py-3 px-lg-5 offset-md-1'>
           <h3>Students with Warnings</h3>
           <hr></hr>
           <div className='input-group mb-3'>
@@ -61,59 +57,85 @@ const StudentWarning = () => {
           </table>
           <button
             type='button'
-            style={{ color: 'White', backgroundColor: '#008da5' }}
-            className='btn btn-lg btn-block'
-            onClick={handleShow}
+            className='btn weltecColor btn-lg btn-block text-white'
+            data-toggle='modal'
+            data-target='#modalExtractStudWarning'
           >
             Extract
           </button>
         </div>
 
-        <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title> Choose extraction type.</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <h6>Email:</h6>
-              <div className='input-group mb-3'>
-                <input
-                  type='text'
-                  className='form-control'
-                  placeholder='Enter email'
-                  aria-label='Enter email'
-                  aria-describedby='btnSendEmail'
-                />
-                <div className='input-group-append'>
-                  <button
-                    style={{backgroundColor: '#008da5' }}
-                    className='btn text-white'
-                    type='button'
-                    id='btnSendEmail'
-                  >
-                    Send
-                  </button>
-                </div>
-              </div>
-
-              <center>
-                <h6>OR</h6>
-
-                <button style={{backgroundColor: '#008da5' }} type='button' className='btn text-white'>
-                  <span className='text-white'><Printer size={22}/></span>
-                  &nbsp;Print
+        <div
+          className='modal fade'
+          id='modalExtractStudWarning'
+          tabIndex='-1'
+          role='dialog'
+          aria-labelledby='modalExtractStudWarningTitle'
+          aria-hidden='true'
+        >
+          <div className='modal-dialog modal-dialog-centered' role='document'>
+            <div className='modal-content'>
+              <div className='modal-header'>
+                <h5 className='modal-title' id='modalExtractStudWarningTitle'>
+                  Choose extraction type.
+                </h5>
+                <button
+                  type='button'
+                  className='close'
+                  data-dismiss='modal'
+                  aria-label='Close'
+                >
+                  <span aria-hidden='true'>&times;</span>
                 </button>
-              </center>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant='danger' onClick={handleClose}>
-            Cancel
-          </Button>
-        </Modal.Footer>
-      </Modal>
+              </div>
+              <div className='modal-body'>
+                <h6>Email:</h6>
+                <div className='input-group mb-3'>
+                  <input
+                    type='text'
+                    className='form-control'
+                    placeholder='Enter email'
+                    aria-label='Enter email'
+                    aria-describedby='btnSendEmail'
+                  />
+                  <div className='input-group-append'>
+                    <button
+                      className='btn weltecColor text-white'
+                      type='button'
+                      id='btnSendEmail'
+                    >
+                      Send
+                    </button>
+                  </div>
+                </div>
+
+                <center>
+                  <h6>OR</h6>
+
+                  <button
+                    type='button'
+                    className='btn btn-lg weltecColor text-white'
+                  >
+                    <span className='text-white' data-feather='printer'></span>
+                    &nbsp;Print
+                  </button>
+                </center>
+              </div>
+              <div className='modal-footer'>
+                <button
+                  type='button'
+                  className='btn btn-secondary'
+                  data-dismiss='modal'
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </Aux>
     );
-  };
+  }
+}
 
 export default StudentWarning;
