@@ -10,7 +10,7 @@ export default class streamTable extends Component {
 
   spreadsheetData = (data) => {
     let spreadsheetObj = [];
-    for (let i = 2; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       let obj = {
         courseName: data[i].courseName,
         program: data[i].program,
@@ -71,7 +71,7 @@ export default class streamTable extends Component {
                             <b>{value.tutor}</b>
                           </li>
                           <li>{value.campus}</li>
-                          <li>{value.program}</li>
+                          <li>Program: {value.program}</li>
                           <li>Credit : {value.credit}</li>
                         </ul>
                       </td>
