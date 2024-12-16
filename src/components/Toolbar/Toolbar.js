@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Toolbar.css';
 import { Component } from 'react';
-import { LogOut } from 'react-feather';
-
 class toolbar extends Component {
   constructor(props) {
     super(props);
@@ -20,8 +18,7 @@ class toolbar extends Component {
           />
         </Link>
         <span className='navbar-text text-white'>
-          <Link style={{ textDecoration: 'none', color: '#FFF' }} to='/administration'>
-          <LogOut size={20}/>{' '}
+          <Link style={{ textDecoration: 'none', color: '#FFF' }} to='/'>
             Log out
           </Link>
         </span>

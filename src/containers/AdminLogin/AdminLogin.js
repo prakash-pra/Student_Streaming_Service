@@ -66,13 +66,11 @@ class AdminLogin extends Component {
           }}
         >
           <div className='card-header' style={{ backgroundColor: '#008da5' }}>
-            <center>
-              <img
-                src={require('../../assets/Images/officialLogo.png')}
-                alt='weltec'
-                width='190'
-              />
-            </center>
+            <img
+              src={require('../../assets/Images/officialLogo.png')}
+              alt='weltec'
+              width='190'
+            />
           </div>
           <br />
           <h1 className='h3 mb-3 font-weight-normal'>Please sign in</h1>
@@ -86,7 +84,7 @@ class AdminLogin extends Component {
           </Alert>
           <form className='form-signin' onSubmit={this.handleSubmit}>
             <div className='form-group'>
-              <label htmlFor=''>Username</label>
+              <label htmlFor='ap/id'>Username</label>
               <input
                 type='text'
                 name='username'
@@ -97,13 +95,9 @@ class AdminLogin extends Component {
             </div>
 
             <div className='form-group'>
-
-              <label htmlFor='adminpassword'>Password</label>
-
+              <label htmlFor='password'>Password</label>
               <input
-                style = {{WebkitTextSecurity: 'disc'}}
                 type='pasword'
-                id='adminpassword'
                 name='adminpassword'
                 className='form-control'
                 value={this.state.studentId}
@@ -111,8 +105,7 @@ class AdminLogin extends Component {
               />
             </div>
             <button
-              style={{backgroundColor: '#008da5'}}
-              className='text-white btn btn-lg btn-block'
+              className='text-white btn btn-primary btn-lg btn-block'
               type='submit'
             >
               Sign in
